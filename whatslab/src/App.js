@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import Bananinha from "./Components/Bananinha";
 
 const arrayMensagem =[];
+
+
 
 const AppContainer = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
+  margin:100px;
+  /* flex-direction: column; */
+  align-items:center;
 `;
 
 const FormContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 180px;
-  width: 240px;
+  justify-content: space-evenly;
+  height: 50px;
+  width: 70vw;
   border: 1px solid gray;
   margin: 20px;
   padding: 30px;
@@ -50,7 +54,7 @@ class App extends React.Component {
   render() {
     const componentesMensagem = this.state.mensagens.map((p) => {
       return (
-        <div
+        <Bananinha
           nomeUsuario={p.nomeUsuario}
           mensagemUsuario={p.mensagemUsuario}
         />  
