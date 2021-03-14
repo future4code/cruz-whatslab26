@@ -40,7 +40,7 @@ input {
     background-color: white;
     border: none;
     margin: 2px;
-    opacity: 84%;
+    /* opacity: 84%; */
     height: 28px;
     border-bottom: gray solid 1px;
 }
