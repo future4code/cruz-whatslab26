@@ -1,7 +1,23 @@
 .Post {
-border: 1px solid gray;
-height: 100px;
-width: 300px;
-margin-bottom: 10px;
-padding-left: 20px;
+    border: 1px solid gray;
+    height: 100px;
+    width: 300px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.usuario{
+    background-color: red;
+    height: 24px;
+    width: 8vw;
+}
+
+.msg{
+    background-color: blue;
+    height: 24px;
+    width: 64vw;
+}
+
+button {
+    height: 30px;
 }

@@ -9,8 +9,10 @@ class Post extends React.Component {
 
     return (
       <div className="Post">
-        <p>Nome: {this.props.usuarioNome}</p>
-        <p>Mensagem: {this.props.usuarioMensagem}</p>
+            
+                <p>Nome: {this.props.usuarioNome}</p>
+                <p>Mensagem: {this.props.usuarioMensagem}</p>
+            
         
       </div>
     );
