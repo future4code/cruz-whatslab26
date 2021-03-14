@@ -57,7 +57,11 @@ class App extends React.Component {
     };
     const novasMensagens = [...this.state.mensagens, novaMensagem]
     
-    this.setState({mensagens: novasMensagens});
+    this.setState({
+      mensagens: novasMensagens,
+      valorInputNome: "",
+      valorInputMensagem: ""
+    });
   };
 
   render() {
