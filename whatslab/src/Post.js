@@ -4,14 +4,12 @@ import './Post.css';
 
 class Post extends React.Component {
 
-  
   render() {
-
     return (
-        <div className="bananinha">
+        <div className="DivPosts">
             <div className="Post">
-                <div>Nome: {this.props.usuarioNome}</div>
-                <div>Mensagem: {this.props.usuarioMensagem}</div>
+                <div id="nomeNegrito"> {this.props.usuarioNome}</div>
+                <div> {this.props.usuarioMensagem}</div>
             </div>
         </div>
     );
