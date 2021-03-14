@@ -8,14 +8,14 @@ const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 50vw;
-  margin:0px;
+  /* margin:0px; */
   flex-direction: column;
   align-items:center;
   height: 100vh;
   border-style: solid;
   background-color: yellow;
-  margin-left: 44vh;
-  
+  /* margin-left: 44vh; */
+  position: fixed; left: 24vw;
 `;
 
 const PostContainer = styled.div`

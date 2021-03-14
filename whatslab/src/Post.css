@@ -3,12 +3,25 @@
     
 }
 
+.bananinha {
+    background-color: green;
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    height: 50px;
+    position: relative; right: 130px;
+}
+
 .Post {
     border: 1px solid gray;
     height: 50px;
     width: 300px;
     margin-bottom: 10px;
     padding-left: 20px;
+    background-color: tomato;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 
 .usuario{
@@ -27,9 +40,7 @@ button {
     height: 30px;
 }
 
-.bananinha {
-    background-color: green;
-}
+
 
 .bananinha div {
     height: 50px;
