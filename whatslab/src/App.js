@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Bananinha from "./Components/Bananinha";
-
-const arrayMensagem =[];
+import Post from "./Post"
 
 
 
@@ -11,9 +9,17 @@ const AppContainer = styled.div`
   justify-content: center;
   width: 100vw;
   margin:100px;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items:center;
 `;
+
+const PostContainer = styled.div`
+  border: 1px solid gray;
+  height: 50px;
+  width: 300px;
+  margin-bottom: 10px;
+`;
+
 
 const FormContainer = styled.div`
   display: flex;
@@ -26,59 +32,68 @@ const FormContainer = styled.div`
 `;
 class App extends React.Component {
     state = {
-      mensagens: arrayMensagem,
-      usuarioNome: '',
-      usuarioMensagem: ''
+      mensagens: [
+        {
+          usuarioNome: "Digite seu nome",
+          usuarioMensagem: "Digite sua mensagem",
+        }
+      ],
+      valorInputNome: "",
+      valorInputMensagem: ""
     };
 
-  changeUsuarioNome = (event) => {
-    this.setState({ usuarioNome: event.target.value });
+  onChangeNomeUsuario = (event) => {
+    this.setState({ valorInputNome: event.target.value });
   };
 
-  changeUsuarioMensagem = (event) => {
-    this.setState({ usuarioMensagem: event.target.value });
+  onChangeMensagemUsuario = (event) => {
+    this.setState({ valorInputMensagem: event.target.value });
   };
 
   addNovaMensagem = () => {
     const novaMensagem = {
-      nomeUsuario: this.state.usuarioNome,
-      mensagemUsuario: this.state.usuarioMensagem
+      usuarioNome: this.state.valorInputNome,
+      usuarioMensagem: this.state.valorInputMensagem
     };
-    this.setState({
-      mensagens: [...this.state.mensagens, novaMensagem],
-      usuarioNome: "",
-      usuarioMensagem:""
-    });
+    const novasMensagens = [...this.state.mensagens, novaMensagem]
+    
+    this.setState({mensagens: novasMensagens});
   };
 
   render() {
-    const componentesMensagem = this.state.mensagens.map((p) => {
-      return (
-        <Bananinha
-          nomeUsuario={p.nomeUsuario}
-          mensagemUsuario={p.mensagemUsuario}
-        />  
-      );
-    });
       return (
         <AppContainer>
-          <FormContainer>
-            <input
-              placeholder={"Usuário"}
-              value={this.state.usuarioNome}
-              onChange={this.nomeUsuario}
-            />
-            <input
-              placeholder={"Mensagem"}
-              value={this.state.usuarioMensagem}
-              onChange={this.mensagemUsuario}
-            />
-            <button onClick={this.addNovaMensagem}>Enviar</button>
-          </FormContainer>
-          {componentesMensagem}
+            {this.state.mensagens.map((mensagem) => {
+              return <Post
+                key = {mensagem.usuarioMensagem}
+                usuarioNome = {mensagem.usuarioNome}
+                usuarioMensagem = {mensagem.usuarioMensagem}
+
+
+              />
+
+            })}
+            <FormContainer>
+              <input
+                placeholder={"Usuário"}
+                value={this.state.valorInputNome}
+                onChange={this.onChangeNomeUsuario}
+              />
+              <input
+                placeholder={"Mensagem"}
+                value={this.state.valorInputMensagem}
+                onChange={this.onChangeMensagemUsuario}
+              />
+              <button onClick={this.addNovaMensagem}>Enviar</button>
+            </FormContainer>
+            
+
       </AppContainer>
         );
-    }   
+    
   } 
+    
+} 
   
-    export default App;
+  
+export default App;
