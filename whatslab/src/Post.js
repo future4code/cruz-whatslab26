@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import './Post.css';
 
 class Post extends React.Component {
 
@@ -7,7 +8,7 @@ class Post extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="Post">
         <p>Nome: {this.props.usuarioNome}</p>
         <p>Mensagem: {this.props.usuarioMensagem}</p>
         
