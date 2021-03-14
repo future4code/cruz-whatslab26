@@ -7,10 +7,15 @@ import './Post.css';
 const AppContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
-  margin:100px;
+  width: 50vw;
+  margin:0px;
   flex-direction: column;
   align-items:center;
+  height: 100vh;
+  border-style: solid;
+  background-color: yellow;
+  margin-left: 44vh;
+  
 `;
 
 const PostContainer = styled.div`
@@ -25,10 +30,13 @@ const FormContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   height: 50px;
-  width: 70vw;
+  width: 45vw;
   border: 1px solid gray;
   margin: 20px;
   padding: 30px;
+  background-color: orange;
+  position: fixed; top: 564px;
+  
 `;
 class App extends React.Component {
     state = {
