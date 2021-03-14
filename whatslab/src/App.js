@@ -2,48 +2,39 @@ import React from "react";
 import styled from "styled-components";
 import Post from "./Post"
 import './Post.css';
+// import Fundo from 'background.jpg';
 
 
-const AppContainer = styled.div`
+const TelaTotal = styled.div`
   display: flex;
   justify-content: center;
   width: 50vw;
-  margin:0px;
   flex-direction: column;
   align-items:center;
   height: 100vh;
-  border-style: solid;
-  background-color: yellow;
-  margin-left: 44vh;
-  
+  overflow:auto; 
+  background-color: #b4e0f9;
+  position: fixed; left: 24vw;
 `;
 
-const PostContainer = styled.div`
-  border: 1px solid gray;
-  height: 50px;
-  width: 300px;
-  margin-bottom: 10px;
-`;
-
-
-const FormContainer = styled.div`
+const TelaMensagens = styled.div`
   display: flex;
   justify-content: space-evenly;
   height: 50px;
   width: 45vw;
-  border: 1px solid gray;
   margin: 20px;
   padding: 30px;
-  background-color: orange;
+  background-color: #34aceb;
+  /* opacity: 80%; */
   position: fixed; top: 564px;
-  
 `;
+
 class App extends React.Component {
     state = {
       mensagens: [
         {
-          usuarioNome: "Digite seu nome",
-          usuarioMensagem: "Digite sua mensagem",
+          usuarioNome: "Olá",
+          usuarioMensagem: "Bem vindo",
         }
       ],
       valorInputNome: "",
@@ -74,18 +65,15 @@ class App extends React.Component {
 
   render() {
       return (
-        <AppContainer>
+        <TelaTotal>
             {this.state.mensagens.map((mensagem) => {
               return <Post
                 key = {mensagem.usuarioMensagem}
                 usuarioNome = {mensagem.usuarioNome}
                 usuarioMensagem = {mensagem.usuarioMensagem}
-
-
               />
-
             })}
-            <FormContainer>
+            <TelaMensagens>
               <input class="usuario"
                 placeholder={"Usuário"}
                 value={this.state.valorInputNome}
@@ -97,15 +85,9 @@ class App extends React.Component {
                 onChange={this.onChangeMensagemUsuario}
               />
               <button onClick={this.addNovaMensagem}>Enviar</button>
-            </FormContainer>
-            
-
-      </AppContainer>
+            </TelaMensagens>
+      </TelaTotal>
         );
-    
-  } 
-    
-} 
-  
-  
+  }   
+}   
 export default App;
