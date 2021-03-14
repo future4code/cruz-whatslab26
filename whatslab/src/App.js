@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Post from "./Post"
-
+import './Post.css';
 
 
 const AppContainer = styled.div`
@@ -78,12 +78,12 @@ class App extends React.Component {
 
             })}
             <FormContainer>
-              <input
+              <input class="usuario"
                 placeholder={"Usuário"}
                 value={this.state.valorInputNome}
                 onChange={this.onChangeNomeUsuario}
               />
-              <input
+              <input class="msg"
                 placeholder={"Mensagem"}
                 value={this.state.valorInputMensagem}
                 onChange={this.onChangeMensagemUsuario}
